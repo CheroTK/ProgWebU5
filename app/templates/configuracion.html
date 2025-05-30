@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Configuración de Dispositivos - ActiveLife{% endblock %}
+{% set active_page = 'configuracion' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/configuracion.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<h1 class="mt-4">Configuración de Dispositivos</h1>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Dispositivos Conectados</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Smartphone</li>
+            <li class="list-group-item">Reloj Inteligente</li>
+            <li class="list-group-item">Pulsera de Actividad</li>
+            <li class="list-group-item">Bicicleta Estática</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h2>Agregar Nuevo Dispositivo</h2>
+        <section class="section-blox">
+            <img src="{{ url_for('static', filename='IMG/Bluetooth.png') }}" alt="Bluetooth">
+            <button type="button" id="searchBtn">+ Buscar Dispositivo</button>
+            <div id="message" style="display:none;">Buscando dispositivo...</div>
+        </section>
+    </div>
+</div>
+{% endblock %}
