@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Mi Perfil - ActiveLife{% endblock %}
+{% set active_page = 'perfil' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="mt-4 text-center">Mi Perfil</h1>
+<div class="row">
+    <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='IMG/gojo.png') }}" alt="Foto de perfil" class="img-fluid rounded-circle" width="150">
+        <h2 class="mt-3">{{ user.username }}</h2>
+        <p>Correo: {{ user.email }}</p>
+    </div>
+    <div class="col-md-8">
+        <h3>Información Personal</h3>
+        <p><strong>Edad:</strong> {{ user.edad if user.edad else 'Sin registrar' }} años</p>
+        <p><strong>Altura:</strong> {{ user.altura if user.altura else 'Sin registrar' }} m</p>
+        <p><strong>Peso:</strong> {{ user.peso if user.peso else 'Sin registrar' }} kg</p>
+        <p><strong>Objetivo:</strong> {{ user.objetivo if user.objetivo else 'Sin registrar' }}</p>
+        <a href="{{ url_for('main.editar_perfil') }}" class="btn btn-warning">Editar</a>
+    </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/perfil.js') }}"></script>
+{% endblock %}

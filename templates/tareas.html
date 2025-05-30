@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Mis Tareas - ActiveLife{% endblock %}
+{% set active_page = 'tareas' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="mt-4 text-center">Mis Tareas</h1>
+<div id="task-list" class="row">
+    <div class="col-md-6">
+        <h2>Tarea 1</h2>
+        <p>Descripción de la tarea 1.</p>
+        <button class="btn btn-primary">Completar</button>
+    </div>
+    <div class="col-md-6">
+        <h2>Tarea 2</h2>
+        <p>Descripción de la tarea 2.</p>
+        <button class="btn btn-primary">Completar</button>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-12">
+        <button class="btn btn-success" id="new-task-button">+ Nueva Tarea</button>
+    </div>
+</div>
+<div id="new-task-form" class="mt-4" style="display: none;">
+    <h2>Agregar Nueva Tarea</h2>
+    <div class="mb-3">
+        <label for="task-title" class="form-label">Título de la Tarea</label>
+        <input type="text" class="form-control" id="task-title" placeholder="Título de la tarea">
+    </div>
+    <div class="mb-3">
+        <label for="task-description" class="form-label">Descripción de la Tarea</label>
+        <textarea class="form-control" id="task-description" rows="3" placeholder="Descripción de la tarea"></textarea>
+    </div>
+    <button class="btn btn-primary" id="complete-button">Completar</button>
+    <button class="btn btn-success" id="save-button">Guardar</button>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/tareas.js') }}"></script>
+<script>
+// Aquí el JS para tareas, si lo usas como archivo externo, ponlo en static/js/
+</script>
+{% endblock %}
