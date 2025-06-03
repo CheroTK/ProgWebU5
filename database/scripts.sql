@@ -53,6 +53,7 @@ VALUES
   ('admin', 'admin@correo.com', 'scrypt:32768:8:1$lDiShujSp5jhis1t$f0ae7b554669c2f5b521f946d8845262bcd3269b12b4c0688eebf0b6b4db63c2649eba864c0b49045e47a3743c457fa69ecceec0875819caa93a72ce2706cd7e', 'admin'),
   ('editor', 'editor@correo.com', 'scrypt:32768:8:1$leQ3Jm7aGRPLGFGp$f2a71b0ea227d3b7a6898d28cda227db47d35f6e7721c39c30b5a204239e66a464fc5e24367cc390014e96e2c7297b5f6e51f86f50bcf84b70bcb202841f36db', 'editor'),
   ('cliente', 'cliente@correo.com', 'scrypt:32768:8:1$ynpKs2n4YfAkrX9K$ba5396b0d3c2d4b7f4c3c50e12b6d6ebf045ca81c88a48cc9ef0ea652f258f32d6d4f51a6dc7794d1b929a5c13e65b34a265c8afcdebfce3c35c0dfac7e32a49', 'cliente');
+  ('cherotk', 'cherotk@correo.com', 'cherotk123', 'admin');
 
 -- Inserta productos con categoría (sin imágenes)
 INSERT INTO productos (nombre, descripcion, categoria, precio, stock) VALUES
